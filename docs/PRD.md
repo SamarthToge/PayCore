@@ -10,6 +10,13 @@ Students and users need a simple way to track income, expenses, and later use an
 - Create accounts
 - Create categories
 - Add manual income/expense transactions
+- Balance and Balance After recur transaction
+- Who borrow money and from whom i borrow money.
+- Goals and add Money in the goal.
+- Scan receipt, Make transaction throw it and mange them.
+- Add screenshot of upi app history or bank statement and add it in out app transaction.
+- Recurring Transactions, Recharge management and auto set recur transaction.
+- Investment tips also with risk %;
 - Edit/delete transactions
 - Monthly summary
 - Category-wise report
