@@ -7,9 +7,9 @@
 - User
 1. POST  /api/v1/users
 2. GET   /api/v1/users
-3. GET  /api/v1/users/{email}
+3. GET  /api/v1/users/{id}
 4. PUT  /api/v1/users/{userId}
-5. DELETE  /api/v1/users/{email}
+5. DELETE  /api/v1/users/{id}
 
 - Goals
 1. POST  /api/v1/goals
@@ -34,8 +34,21 @@
 - Statement or UPI app screenshot
 1. POST  /api/v1/scans
 
-- DashBoard
-
 - Subscriptions
+1. POST  /api/v1/subscriptions
+2. GET  /api/v1/subscriptions
+3. GET  /api/v1/subscriptions/{category}
+4. GET  /api/v1/subscriptions/{id}
+5. PUT  /api/v1/subscriptions/{id}
+6. DELETE  /api/v1/subscriptions/{id}
 
+- Transactions
+1. POST  /api/v1/transactions
+2. GET  /api/v1/transactions
+3. GET  /api/v1//transactions/{category}
+4. GET  /api/v1/transactions/{id}
+5. PUT  /api/v1/transactions/{id}
+6. DELETE  /api/v1/transactions/{id}
+   
+- DashBoard
 - Invests
