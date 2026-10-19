@@ -1,4 +1,4 @@
-package com.SamarthToge.CollabBoard;
+package com.SamarthToge.PayCore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-tertiary": "#003640",
+        "tertiary-fixed": "#acedff",
+        "on-secondary-container": "#b0b2ff",
+        "on-primary-fixed-variant": "#005236",
+        "on-tertiary-container": "#003f4b",
+        "surface-bright": "#31394d",
+        "primary": "#4edea3",
+        "on-secondary-fixed-variant": "#2f2ebe",
+        "on-error-container": "#ffdad6",
+        "primary-fixed": "#6ffbbe",
+        "secondary": "#c0c1ff",
+        "surface-container-highest": "#2d3449",
+        "on-tertiary-fixed": "#001f26",
+        "on-error": "#690005",
+        "surface-container-low": "#131b2e",
+        "background": "#0b1326",
+        "tertiary": "#4cd7f6",
+        "on-background": "#dae2fd",
+        "error-container": "#93000a",
+        "on-tertiary-fixed-variant": "#004e5c",
+        "surface-tint": "#4edea3",
+        "surface-container": "#171f33",
+        "secondary-fixed": "#e1e0ff",
+        "secondary-fixed-dim": "#c0c1ff",
+        "on-primary-fixed": "#002113",
+        "on-secondary": "#1000a9",
+        "primary-fixed-dim": "#4edea3",
+        "inverse-surface": "#dae2fd",
+        "on-secondary-fixed": "#07006c",
+        "tertiary-container": "#00b2d0",
+        "outline": "#86948a",
+        "tertiary-fixed-dim": "#4cd7f6",
+        "surface-variant": "#2d3449",
+        "inverse-on-surface": "#283044",
+        "outline-variant": "#3c4a42",
+        "surface-dim": "#0b1326",
+        "on-primary-container": "#00422b",
+        "on-primary": "#003824",
+        "surface-container-lowest": "#060e20",
+        "surface": "#0b1326",
+        "secondary-container": "#3131c0",
+        "inverse-primary": "#006c49",
+        "error": "#ffb4ab",
+        "on-surface-variant": "#bbcabf",
+        "on-surface": "#dae2fd",
+        "surface-container-high": "#222a3d",
+        "primary-container": "#10b981"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "margin": "2rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "gutter": "1.5rem",
+        "space-xl": "2rem",
+        "margin-mobile": "1rem",
+        "space-xs": "0.25rem",
+        "gutter-mobile": "0.75rem",
+        "space-sm": "0.5rem"
+      },
+      "fontFamily": {
+        "headline-md": ["Inter"],
+        "headline-lg": ["Inter"],
+        "metric-headline": ["Inter"],
+        "headline-sm": ["Inter"],
+        "display-mobile": ["Inter"],
+        "body-lg": ["Inter"],
+        "body-sm": ["Inter"],
+        "metric-subhead": ["Inter"],
+        "label-md": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "label-sm": ["Inter"],
+        "body-md": ["Inter"],
+        "display": ["Inter"]
+      },
+      "fontSize": {
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "metric-headline": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+        "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+        "display-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+        "metric-subhead": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="FinVault Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VkVcYvBuCN6nbYh1uedthYErv00OBF5Fkpk-5UXsLvRdeQIhgpNedbaBrwLSzoVtiBtAC24ubTSn2eWnK-fh5d8elOuNiy8UWEaE8DLaTOVpgg5em-euJr20fTk0sf3kpiHhMZudPoVbFLhlMNC1AafLo5SisGEgQ_VAepIAeaR7YYIRXuouX28ZTeRfN-eBa0d2B2UAr2r7doEvv_wd7gd3298yLgRqFBnJlB_pwy8BMFFDzl5wBanSs"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">FinVault</span></div><span class="px-space-sm py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm tracking-wider uppercase">PRO</span></div><div class="px-space-md"><button class="w-full flex items-center justify-center gap-space-sm bg-primary text-on-primary font-label-md text-label-md py-space-sm px-space-md rounded-lg hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors shadow-[0_0_16px_-2px_rgba(16,185,129,0.25)]" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>+ Upload Scan</span></button></div><div class="px-space-md flex flex-col gap-space-xs"><div class="px-space-sm pb-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">Portfolios &amp; Analytics</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-label-md font-semibold"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="smart-scans" href="#"><span class="material-symbols-outlined text-[20px]">document_scanner</span><span>Smart Scans</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors bg-surface-container-high text-primary font-label-md font-semibold" data-path="loans-and-peer-debts" href="#"><span class="material-symbols-outlined text-[20px]">swap_horiz</span><span>Loans &amp; Peer Debts</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="financial-goals" href="#"><span class="material-symbols-outlined text-[20px]">savings</span><span>Financial Goals</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="px-space-sm pb-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">Telemetry &amp; Records</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-label-md font-semibold"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="receipts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Receipts</span></div><span class="px-1.5 py-0.5 rounded text-[10px] bg-surface-container-highest text-on-surface-variant">24</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="subscriptions" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">autorenew</span><span>Subscriptions</span></div><span class="px-1.5 py-0.5 rounded text-[10px] bg-surface-container-highest text-on-surface-variant">Active</span></a></nav></div></div><div class="px-space-md flex flex-col gap-space-xs"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="vault-settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Security &amp; Nodes</span></a><div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Ledger Synced</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">12ms</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-10 pl-10 pr-12 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline outline-none focus:ring-1 focus:ring-primary transition-all" placeholder="Search transactions, peers, or uploaded bills..." type="text"/><kbd class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button></div><div class="flex items-center gap-space-md pl-space-md"><div class="flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface font-semibold">Alex Morgan</span><span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary"><span class="material-symbols-outlined text-[13px]">verified</span>KYC Verified</span></div><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpDSiihgqUKVbzaTMC966JU5jx6Y0dT0OvaUvA-AffB-6Mg9HFpwrIEHlk4x5Cdn29T7Q7Dy-1z363iAg84eGFmZWzjqyszmkQS_Ad-se6PMej7HkhXUZzcbpOjX7Ici_rQR0R5ulSja5zkGQy4jSgECJ2sQbVXse_ixfhOn1H1Q9oSLNxgDzCi2aHG6BhohyIXNrT11fR72U_NKQ3iVu3KkJ4BVYO6UQzWio1j4qcsUuN0seqy9nw"/></div></div></div></header><main class="relative pt-16 bg-background min-h-screen w-full px-space-lg"><div class="flex flex-col w-full pb-margin">
+<div class="flex flex-col gap-space-lg w-full">
+<!-- Top Action / Control Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Peer-to-Peer Settlement Engine
+        </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Borrow &amp; Lend Ledger</h1>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">filter_list</span>
+<input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md placeholder:text-outline outline-none focus:ring-1 focus:ring-primary shadow-sm" id="debtSearchInput" placeholder="Filter by contact name or note..." type="text"/>
+</div>
+<div class="flex items-center bg-surface-container-lowest p-1 rounded-lg shadow-sm">
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-on-primary bg-primary font-semibold transition-all shadow-sm status-filter-btn" data-filter="all">All</button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all status-filter-btn" data-filter="receivable">I am Owed</button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all status-filter-btn" data-filter="payable">I Owe</button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all status-filter-btn" data-filter="settled">Settled</button>
+</div>
+<button class="flex items-center gap-space-xs bg-primary text-on-primary font-label-md text-label-md py-2.5 px-space-md rounded-lg hover:bg-primary-fixed hover:text-on-primary-fixed transition-all shadow-lg shadow-primary/20 hover:scale-[1.02]" id="openRecordModalBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Add New Loan / Debt</span>
+</button>
+</div>
+</div>
+<!-- Summary KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md w-full">
+<!-- KPI 1: Receivable -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md flex flex-col justify-between shadow-md">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Total You Are Owed</span>
+<div class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">call_received</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-space-xs">
+<span class="font-metric-headline text-metric-headline text-primary tracking-tight">+$2,450.00</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Across 5 friends &amp; colleagues
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-primary font-label-sm text-label-sm font-semibold">94% within repayment terms</span>
+<span class="material-symbols-outlined text-primary text-[16px]">trending_up</span>
+</div>
+</div>
+<!-- KPI 2: Payable -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md flex flex-col justify-between shadow-md">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-error/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Total You Owe</span>
+<div class="w-8 h-8 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">call_made</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-space-xs">
+<span class="font-metric-headline text-metric-headline text-error tracking-tight">-$620.00</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+            Across 2 personal obligations
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-error font-label-sm text-label-sm font-semibold">Next debit scheduled tomorrow</span>
+<span class="material-symbols-outlined text-error text-[16px]">priority_high</span>
+</div>
+</div>
+<!-- KPI 3: Net Balance -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md flex flex-col justify-between shadow-md">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-tertiary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Net Balance Position</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-space-xs">
+<span class="font-metric-headline text-metric-headline text-on-surface tracking-tight">+$1,830.00</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">Net Positive</span>
+            Credit surplus
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-on-surface-variant font-body-sm text-body-sm">Liquidity buffer intact</span>
+<span class="material-symbols-outlined text-tertiary text-[16px]">verified_user</span>
+</div>
+</div>
+<!-- KPI 4: Next Settlement -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Next Upcoming Settlement</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">event_upcoming</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-space-xs">
+<div class="flex items-baseline gap-2">
+<span class="font-metric-headline text-metric-headline text-on-surface tracking-tight">$150.00</span>
+<span class="text-primary font-label-md text-label-md font-semibold">Marcus Reed</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">schedule</span>
+            Matures in 3 days (Jun 18)
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<button class="text-tertiary hover:text-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors">
+            Ping Early Reminder <span class="material-symbols-outlined text-[14px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tab Strip & Views -->
+<div class="flex flex-col gap-space-md w-full">
+<div class="flex items-center justify-between border-b-0 pb-1">
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-1 rounded-xl">
+<button class="tab-button px-space-md py-2 rounded-lg font-label-md text-label-md bg-surface-container-high text-primary font-semibold shadow-sm flex items-center gap-2 transition-all" data-tab="active">
+<span>Active Debts</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] bg-primary/20 text-primary">7</span>
+</button>
+<button class="tab-button px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-2 transition-all" data-tab="pending">
+<span>Pending Requests</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] bg-surface-container-highest text-on-surface-variant">2</span>
+</button>
+<button class="tab-button px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-2 transition-all" data-tab="settled">
+<span>Settled History</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] bg-surface-container-highest text-on-surface-variant">34</span>
+</button>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+<span>Ledger encrypted &amp; cryptographic hash pinned</span>
+</div>
+</div>
+<!-- Main Columns Grid: 2-Column Split -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg w-full">
+<!-- LEFT COLUMN: People Who Owe You (Receivable) -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_rgba(78,222,163,0.6)]"></div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">People Who Owe You (Receivable)</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">5 Active</span>
+</div>
+<!-- Receivable Card 1 -->
+<div class="group rounded-xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-inner" data-alt="Close up photographic corporate portrait of a stylish young professional man with short dark hair in a sleek minimalist grey jacket against a moody charcoal neo-banking studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfczZLfhit59TA60uASRcJtba19dyjNsHqnAjYXhSGg62mQhQiwAcqsDSkDfHpqBZEUXhhj21mBZrzQqZYQQQgyMRIvlPatRyWBAnQXegTwb7Y8lPz-JNkR_tjQZAuugCSbRVjMgJEvCO1TLePTwHKToYft-453sNAXh50ERK8-r84dUNI00lx6boBTe7CjLBdQCLT-h3485KuYWc7h6HmUSgSjOcsIQwjG5OnHvBaRhPDoDdxFySy"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full ring-2 ring-surface-container"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Marcus Reed</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-surface-container-highest text-on-surface-variant font-mono">ID: #REC-4091</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lent on May 24, 2024 · 0% Peer APR</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-subhead text-metric-subhead text-primary font-bold">+$150.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Orig. $300.00</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[16px] text-tertiary">local_activity</span>
+<span class="truncate text-on-surface">Dinner split + Coachella VIP Tickets</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary/15 text-primary font-label-sm text-label-sm font-semibold whitespace-nowrap">Due in 3 days</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">receipt_long</span>
+<a class="hover:text-primary transition-colors underline decoration-dotted" href="#">1 receipt linked</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-bright text-label-sm font-label-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+<span>Edit</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-primary-container/20 text-primary hover:bg-primary hover:text-on-primary text-label-sm font-label-sm transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">done_all</span>
+<span>Settle</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed text-label-sm font-label-sm transition-all flex items-center gap-1 font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[15px]">send_to_mobile</span>
+<span>Send UPI Reminder</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Receivable Card 2 -->
+<div class="group rounded-xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-inner" data-alt="Editorial portrait of an athletic woman executive with tied hair in modern high tech dark apparel, soft emerald ambient lighting, crisp neo-bank brand styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWNM_fgJYRYBFLW4JeSo4k6waAUJt-u2fvHV2yUeBs3jr22y_x9pqUqb1LfFQUJKPXGorVg9uG1gSrXfxziyK5E7ViGPy-Ydrh9LKBenq2UyxN2_0OS5kcQXPTWU_N8biZs4tOwEZ926zYsACLM3ii7XSBlzTKhb15pUPASIFKxRrT0IMmU2bWnxySZ5b377bnHUnR4ryOGshfQfP4IURC-FBaBXaTLjT_WUwZ7stOX0jHDPjD5tI4"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full ring-2 ring-surface-container"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Elena Rostova</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-surface-container-highest text-on-surface-variant font-mono">ID: #REC-3829</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lent on Apr 12, 2024 · 3.5% Staking Index</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-subhead text-metric-subhead text-primary font-bold">+$1,500.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Orig. $1,500.00</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[16px] text-tertiary">flight_takeoff</span>
+<span class="truncate text-on-surface">Zurich FinTech Summit Flights &amp; Hotel</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap">Due Jul 30, 2024</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">contract</span>
+<span>Signed promissory slip attached</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-bright text-label-sm font-label-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+<span>Terms</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed text-label-sm font-label-sm transition-all flex items-center gap-1 font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[15px]">send_to_mobile</span>
+<span>Send UPI Reminder</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Receivable Card 3 -->
+<div class="group rounded-xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary font-headline-sm">
+                  DK
+                </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Devon Vance &amp; Kian</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-surface-container-highest text-on-surface-variant font-mono">ID: #REC-4100</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lent on Jun 02, 2024 · Direct Transfer</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-subhead text-metric-subhead text-primary font-bold">+$800.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Orig. $800.00</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[16px] text-tertiary">computer</span>
+<span class="truncate text-on-surface">GPU Cluster Shared Server Deposit</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container/30 text-error font-label-sm text-label-sm font-semibold whitespace-nowrap">Overdue 2 days</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="text-error font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                1 automated alert sent
+              </span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-error text-on-error hover:opacity-90 text-label-sm font-label-sm transition-all flex items-center gap-1 font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[15px]">priority_high</span>
+<span>Escalate Prompt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: People You Owe (Payable) -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-error shadow-[0_0_8px_rgba(255,180,171,0.6)]"></div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">People You Owe (Payable)</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container/30 text-error font-label-sm text-label-sm font-semibold">2 Active</span>
+</div>
+<!-- Payable Card 1 (Urgent: Due Tomorrow) -->
+<div class="group rounded-xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-inner" data-alt="Modern studio portrait of a confident creative woman designer with glasses in minimalist dark attire on dark graphite background with sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt1LgKeSlm0c3olZY2-t7RazgLeKmekAR7bzhfIUFr0X8At-Jr5bRMJNEQXhTZtT42bbTB02TfFTZxf38BbGqUYXV0Xcs1-pqhDuoDQfY4GQOoOKMaoAuZjRSAeRAM3eGgwEzqieF3IOYyfwiL2PspP65FFA0YJtr8a5RZvQkq7FrIPNNVBeOlBw1wxwaK5bSdAEo0E2nTK08DXjECUVE_tiRyzfMs4-NKZC_6JKvlxDwUKydsqJfL"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-error rounded-full ring-2 ring-surface-container"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Sarah Lin</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-error-container/40 text-error font-semibold uppercase tracking-wider">Due Tomorrow</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Borrowed on Jun 05, 2024 · UPI ID: sarah.lin@okaxis</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-subhead text-metric-subhead text-error font-bold">-$420.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Orig. $420.00</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[16px] text-tertiary">cottage</span>
+<span class="truncate text-on-surface">Airbnb Tahoe Retreat weekend cabin share</span>
+</div>
+<button class="text-tertiary hover:underline text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">attach_file</span>
+<span>Receipt.pdf</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">qr_code_2</span>
+<span class="font-mono text-[12px]">UPI / Instant Transfer Ready</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-bright text-label-sm font-label-sm transition-colors" type="button">
+                  Delay +2d
+                </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed text-label-sm font-label-sm transition-all flex items-center gap-1.5 font-semibold shadow-md" type="button">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Pay via UPI / Transfer</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Payable Card 2 -->
+<div class="group rounded-xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center text-on-surface font-headline-sm">
+                  JT
+                </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Julian Thorne</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-surface-container-highest text-on-surface-variant font-mono">ID: #PAY-1102</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Borrowed on May 18, 2024 · 0% Peer</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-subhead text-metric-subhead text-error font-bold">-$200.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Orig. $500.00 ($300 paid)</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[16px] text-tertiary">construction</span>
+<span class="truncate text-on-surface">Coworking Space 3D Printer Shared Tooling</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap">Due in 14 days</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+<span>Partial ledger confirmed</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-bright text-label-sm font-label-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">send</span>
+<span>Pay Partial ($100)</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed text-label-sm font-label-sm transition-all flex items-center gap-1 font-semibold shadow-md" type="button">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Pay Total</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Peer Liquidity Ratio Visual Widget -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md flex flex-col gap-space-sm shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Peer Debt Ratio &amp; Velocity</span>
+<span class="text-primary font-label-sm text-label-sm">79.8% Solvency Buffer</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full transition-all" style="width: 79.8%" title="Receivable $2,450"></div>
+<div class="bg-error h-full transition-all" style="width: 20.2%" title="Payable $620"></div>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>Owed to you: $2,450.00</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span>You owe: $620.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Slide Drawer / Modal: Record New Debt or Loan -->
+<div class="fixed inset-0 z-50 flex items-center justify-end bg-background/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" id="recordDebtModal">
+<div class="w-full max-w-lg h-full bg-surface-container-low shadow-2xl p-space-lg flex flex-col justify-between overflow-y-auto transform translate-x-full transition-transform duration-300" id="modalDrawerPanel">
+<!-- Modal Header -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">post_add</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Record New Debt / Loan</h3>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" id="closeRecordModalBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Post bilateral debt obligations to the encrypted local vault &amp; sync UPI settlement contracts.</p>
+</div>
+<!-- Modal Form Body -->
+<form class="flex flex-col gap-space-md my-space-md" id="recordDebtForm" onsubmit="event.preventDefault(); handleSaveDebt();">
+<!-- Direction Segmented Control -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Direction</label>
+<div class="grid grid-cols-2 p-1 bg-surface-container-lowest rounded-lg gap-1">
+<button class="direction-btn py-2 text-center rounded-lg font-label-md text-label-md bg-surface-container-high text-primary font-semibold transition-all shadow-sm flex items-center justify-center gap-1.5" id="dirLentBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+<span>I Lent (Receivable)</span>
+</button>
+<button class="direction-btn py-2 text-center rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1.5" id="dirBorrowedBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">south_west</span>
+<span>I Borrowed (Payable)</span>
+</button>
+</div>
+</div>
+<!-- Contact Name & Email -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="contactInput">Contact Name or Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">person</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md placeholder:text-outline outline-none focus:ring-1 focus:ring-primary shadow-sm" id="contactInput" placeholder="e.g. Liam Sterling or liam@vault.io" required="" type="text"/>
+</div>
+</div>
+<!-- Amount & Due Date in 2 columns -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="amountInput">Amount ($ USD)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-primary font-semibold">$</span>
+<input class="w-full h-11 pl-8 pr-3 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md placeholder:text-outline outline-none focus:ring-1 focus:ring-primary shadow-sm" id="amountInput" placeholder="0.00" required="" step="0.01" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="dueDateInput">Due Date</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md outline-none focus:ring-1 focus:ring-primary shadow-sm" id="dueDateInput" required="" type="date"/>
+</div>
+</div>
+</div>
+<!-- Category & Notes -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="categoryInput">Category &amp; Note</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md placeholder:text-outline outline-none focus:ring-1 focus:ring-primary shadow-sm" id="categoryInput" placeholder="e.g. Travel tickets, Concert, Shared server..." type="text"/>
+</div>
+<!-- Scanned Receipt Proof Integration (/api/v1/scans) -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Attach Scanned Receipt Proof</label>
+<span class="font-label-sm text-[11px] text-tertiary">from /api/v1/scans</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">document_scanner</span>
+<span class="font-body-md text-body-md text-on-surface">Auto-Match Recent Scan</span>
+</div>
+<button class="text-primary text-label-sm font-label-sm font-semibold hover:underline" type="button">
+                Browse Scans (24)
+              </button>
+</div>
+<div class="mt-1 p-2 rounded bg-surface-container-lowest flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[16px] text-outline">receipt</span>
+<span class="truncate text-on-surface">Receipt_Coachella_Split_05-24.png</span>
+</div>
+<span class="text-primary text-[11px] font-semibold uppercase">Attached</span>
+</div>
+</div>
+</div>
+<!-- UPI / Instant Notification Toggle -->
+<label class="flex items-center gap-3 p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer mt-1">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest text-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Send Automated SMS / UPI Notification</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recipient receives deep-link for instant one-click settlement</span>
+</div>
+</label>
+</form>
+<!-- Modal Footer -->
+<div class="flex items-center justify-end gap-space-sm pt-space-md border-t-0">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-colors" id="cancelModalBtn" type="button">
+          Cancel
+        </button>
+<button class="px-space-lg py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed font-label-md text-label-md font-semibold transition-all shadow-md shadow-primary/25" onclick="handleSaveDebt()" type="button">
+          Confirm &amp; Record Ledger
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const modal = document.getElementById('recordDebtModal');
+    const drawer = document.getElementById('modalDrawerPanel');
+    const openBtn = document.getElementById('openRecordModalBtn');
+    const closeBtn = document.getElementById('closeRecordModalBtn');
+    const cancelBtn = document.getElementById('cancelModalBtn');
+
+    function openModal() {
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      drawer.classList.remove('translate-x-full');
+    }
+
+    function closeModal() {
+      drawer.classList.add('translate-x-full');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('pointer-events-none');
+      }, 300);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Direction switcher in modal
+    const lentBtn = document.getElementById('dirLentBtn');
+    const borrowedBtn = document.getElementById('dirBorrowedBtn');
+
+    if (lentBtn && borrowedBtn) {
+      lentBtn.addEventListener('click', () => {
+        lentBtn.className = "direction-btn py-2 text-center rounded-lg font-label-md text-label-md bg-surface-container-high text-primary font-semibold transition-all shadow-sm flex items-center justify-center gap-1.5";
+        borrowedBtn.className = "direction-btn py-2 text-center rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1.5";
+      });
+
+      borrowedBtn.addEventListener('click', () => {
+        borrowedBtn.className = "direction-btn py-2 text-center rounded-lg font-label-md text-label-md bg-surface-container-high text-error font-semibold transition-all shadow-sm flex items-center justify-center gap-1.5";
+        lentBtn.className = "direction-btn py-2 text-center rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1.5";
+      });
+    }
+
+    // Status filter toggles
+    const filterBtns = document.querySelectorAll('.status-filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.className = "px-space-sm py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all status-filter-btn";
+        });
+        btn.className = "px-space-sm py-1.5 rounded font-label-md text-label-md text-on-primary bg-primary font-semibold transition-all shadow-sm status-filter-btn";
+      });
+    });
+
+    // Tab buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => {
+          b.className = "tab-button px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-2 transition-all";
+        });
+        btn.className = "tab-button px-space-md py-2 rounded-lg font-label-md text-label-md bg-surface-container-high text-primary font-semibold shadow-sm flex items-center gap-2 transition-all";
+      });
+    });
+
+    window.handleSaveDebt = function() {
+      closeModal();
+    };
+  })();
+</script></main></div></body></html>
