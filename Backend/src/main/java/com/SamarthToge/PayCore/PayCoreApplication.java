@@ -1,13 +1,13 @@
-package com.SamarthToge.CollabBoard;
+package com.SamarthToge.PayCore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CollabBoardApplication {
+public class PayCoreApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CollabBoardApplication.class, args);
+		SpringApplication.run(PayCoreApplication.class, args);
 	}
 
 }
